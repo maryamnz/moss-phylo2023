@@ -14,7 +14,7 @@ source moss_phylo/bin/activate
 # install required pacakages
 # fastBio requires specific old versions...
 # pip3 install fastBio==0.1.7
-pip install accelerate sentencepiece
+pip install sqlite3 networkx clint
 # check packages
 pip freeze | cut -f 1 -d ' ' | column
 # accelerate==0.16.0
