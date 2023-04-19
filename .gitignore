@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+moss_phylo/
+PyPHLAWD/
+phlawd_db_maker/
+db_files/
