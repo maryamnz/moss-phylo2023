@@ -1,3 +1,28 @@
+#!/bin/bash
+
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=1-00:00:00
+#SBATCH --mem-per-cpu=2G
+#SBATCH --cpus_per_task=20
+#SBATCH --job-name=DB_MAKE
+#SBATCH --output=moss_db_%j_slurm.out
 
 
 module load CMake/3.24.3-GCCcore-11.3.0 SQLite/3.38.3-GCCcore-11.3.0 wget/1.21.3-GCCcore-11.3.0
+cd ~/git/moss-phylo2023/phlawd_db_maker
+
+cat <<EOF | xargs -P 12 -I{} ./phlawd_db_maker {} ../db_files/{}.db
+BCT
+PRI
+ROD
+MAM
+VRT
+INV
+PLN
+VRL
+PHG
+RNA
+SYN
+UNA
+EOF
