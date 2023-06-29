@@ -4,7 +4,7 @@
 #SBATCH --ntasks=1
 #SBATCH --time=00:30:00
 #SBATCH --mem=8G
-#SBATCH --cpus_per_task=10
+#SBATCH --cpus-per-task=10
 #SBATCH --output=moss_phylo_%j_slurm.out
 
 
