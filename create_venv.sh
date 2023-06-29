@@ -3,10 +3,10 @@
 if [[ ! -d moss_phylo ]] ; then 
 echo Making functional term transformers test environment [ moss_phylo ]
 echo Can install environment modules using easybuild
-module load MAFFT/7.505-GCC-11.3.0-with-extensions FastTree/2.1.11-GCCcore-11.3.0 BLAST+/2.13.0-gompi-2022a MCL/22.282-GCCcore-11.3.0 phyx/1.3-foss-2022a Cython/0.29.33-GCCcore-11.3.0
+module load MAFFT/7.505-GCC-11.3.0-with-extensions FastTree/2.1.11-GCCcore-11.3.0 BLAST+/2.13.0-gompi-2022a MCL/22.282-GCCcore-11.3.0 phyx/1.3-foss-2022a Cython/0.29.33-GCCcore-11.3.0 Python/2.7.18-GCCcore-11.3.0-bare
 echo Python should be from Python/3.10.4-GCCcore-11.3.0
 python --version
-python -m venv --system-site-packages moss_phylo
+virtualenv --system-site-packages moss_phylo
 
 
 source moss_phylo/bin/activate
@@ -41,7 +41,7 @@ cat <<EOF | tee moss_phylo_stub.srun
 #SBATCH --output=moss_phylo_%j_slurm.out
 
 
-module load MAFFT/7.505-GCC-11.3.0-with-extensions FastTree/2.1.11-GCCcore-11.3.0 BLAST+/2.13.0-gompi-2022a MCL/22.282-GCCcore-11.3.0 phyx/1.3-foss-2022a Cython/0.29.33-GCCcore-11.3.0
+module load MAFFT/7.505-GCC-11.3.0-with-extensions FastTree/2.1.11-GCCcore-11.3.0 BLAST+/2.13.0-gompi-2022a MCL/22.282-GCCcore-11.3.0 phyx/1.3-foss-2022a Cython/0.29.33-GCCcore-11.3.0 Python/2.7.18-GCCcore-11.3.0-bare
 
 source ${PWD}/moss_phylo/bin/activate
 EOF
