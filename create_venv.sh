@@ -36,7 +36,7 @@ cat <<EOF | tee moss_phylo_stub.srun
 #SBATCH --ntasks=1
 #SBATCH --time=00:30:00
 #SBATCH --mem=8G
-#SBATCH --cpus_per_task=4
+#SBATCH --cpus-per-task=4
 #SBATCH --output=moss_phylo_%j_slurm.out
 
 
